@@ -1,10 +1,12 @@
-const typeDefs = `
+const { gql } = require("apollo-server-express");
+
+const typeDefs = gql`
   type User {
     _id: ID
     username: String
     email: String
     bookCount: Integer
-    savedBooks: [Book]!
+    savedBooks: [Book]
   }
 
   type Book {
@@ -13,7 +15,7 @@ const typeDefs = `
     description: String
     title: String
     # figure out how to use image and links
-    image:
+    image: String
     link: String
   }
 
@@ -31,9 +33,13 @@ const typeDefs = `
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
 
-    addSkill(profileId: ID!, skill: String!): Profile
-    removeProfile: Profile
-    removeSkill(skill: String!): Profile
+    saveBook(authors: [String]!
+    description: String!
+    title: String!
+    bookId: ID!
+    image: String!
+    ): User                   
+    removeBook(bookId: ID!): User
   }
 `;
 
