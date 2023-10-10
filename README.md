@@ -1,4 +1,4 @@
-# Landen AutoReadMe Generator
+# Landen Google Search Books App
 ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Title
